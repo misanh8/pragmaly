@@ -1,0 +1,5 @@
+<svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" fill="#0F2A44" />
+  <text x="90" y="128" font-family="Manrope, Arial, sans-serif" font-size="130" font-weight="800" fill="#FAFAF7" text-anchor="middle" letter-spacing="-5">P</text>
+  <circle cx="140" cy="46" r="11" fill="#C45B2D" />
+</svg>

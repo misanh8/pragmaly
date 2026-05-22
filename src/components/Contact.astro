@@ -1,0 +1,83 @@
+---
+import { site, waUrl } from '../data/site';
+---
+<section id="contacto" class="section">
+  <div class="container-page">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="h-section">Conversemos 30 minutos</h2>
+      <p class="lead">Tres formas, tú eliges. Cualquiera funciona.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card featured reveal">
+        <span class="micro">opción más rápida</span>
+        <h3>WhatsApp</h3>
+        <p>Respuesta el mismo día hábil. Te agendamos los 30 minutos directo.</p>
+        <a class="btn btn-primary" href={waUrl('Hola, quiero agendar la auditoría gratuita.')} target="_blank" rel="noopener">
+          Abrir WhatsApp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="contact-card reveal">
+        <span class="micro">si prefieres</span>
+        <h3>Correo</h3>
+        <p>Para mensajes más largos o adjuntos.<br/><span class="link">{site.contact.email}</span></p>
+        <a class="btn btn-ghost" href={`mailto:${site.contact.email}`}>Escribir correo</a>
+      </div>
+
+      <form class="contact-card reveal" id="contact-form" novalidate>
+        <span class="micro">también con formulario</span>
+        <h3>Cuéntanos en 3 campos</h3>
+        <div class="form-grid">
+          <label class="form-help" for="f-name">Nombre
+            <input class="field" id="f-name" name="nombre" required autocomplete="name" placeholder="Tu nombre" />
+          </label>
+          <label class="form-help" for="f-biz">Negocio
+            <input class="field" id="f-biz" name="negocio" required autocomplete="organization" placeholder="Nombre de tu empresa o comercio" />
+          </label>
+          <label class="form-help" for="f-msg">Mensaje
+            <textarea class="field" id="f-msg" name="mensaje" required placeholder="En una línea: qué quieres ordenar primero."></textarea>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-dark">
+          Enviar mensaje
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="form-help" id="form-status" aria-live="polite"></span>
+      </form>
+    </div>
+
+    <span class="reply-line">Respondemos el mismo día hábil.</span>
+  </div>
+</section>
+
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 920px) { .contact-grid { grid-template-columns: 1fr 1fr 1.15fr; gap: 22px; align-items: start; } }
+  .contact-card {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 24px; background: var(--paper);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .contact-card.featured { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+  .contact-card.featured h3 { color: var(--paper); }
+  .contact-card.featured p { color: rgba(250,250,247,0.78); }
+  .contact-card.featured .micro { color: rgba(250,250,247,0.55); }
+  .contact-card h3 { font-size: 19px; margin: 0; }
+  .contact-card p { color: var(--ink-2); margin: 0; font-size: 14.5px; }
+  .contact-card .btn { margin-top: 10px; align-self: flex-start; }
+  .form-grid { display: grid; gap: 10px; }
+  .form-grid label { display: grid; gap: 4px; }
+  textarea.field { min-height: 92px; resize: vertical; }
+  .reply-line {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 22px; font-family: var(--mono, "JetBrains Mono"); font-size: 12.5px; color: var(--ink-2);
+  }
+  .reply-line::before { content: ""; width: 16px; height: 1.5px; background: var(--terracota); }
+</style>

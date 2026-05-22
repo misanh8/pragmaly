@@ -1,0 +1,28 @@
+---
+import { site } from '../data/site';
+---
+<section id="casos" class="section">
+  <div class="container-page">
+    <div class="cases reveal">
+      <span class="eyebrow">Casos</span>
+      <h2 class="h-section">{site.cases.title}</h2>
+      <p class="small">{site.cases.body}</p>
+      <a class="btn btn-ghost" href="#contacto">{site.cases.cta}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cases {
+    text-align: center;
+    border: 1px dashed var(--line-2); border-radius: 12px;
+    padding: 56px 28px;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, rgba(15,42,68,0.025) 14px 15px),
+      var(--paper);
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .cases .h-section { margin: 0; }
+  .cases p { margin: 0; max-width: 50ch; }
+  .cases .btn { margin-top: 10px; }
+</style>

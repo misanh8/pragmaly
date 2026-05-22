@@ -1,0 +1,46 @@
+---
+import { site } from '../data/site';
+---
+<section id="proceso" class="section">
+  <div class="container-page">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2 class="h-section">Tres pasos, sin sorpresas</h2>
+      <p class="lead">No te dejamos un documento bonito. Te dejamos algo funcionando que tu equipo sepa usar el lunes siguiente.</p>
+    </div>
+    <div class="steps">
+      {site.process.map((p) => (
+        <div class="step reveal">
+          <span class="step-num">{p.num}</span>
+          <h3>{p.title}</h3>
+          <p class="small">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .steps { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; } }
+  .step { position: relative; padding-top: 8px; }
+  .step-num {
+    font-family: var(--sans, Manrope); font-weight: 700; font-size: 64px; line-height: 1;
+    color: var(--navy); letter-spacing: -0.04em; display: inline-block; position: relative;
+  }
+  .step-num::after {
+    content: ""; position: absolute; bottom: 8px; right: -10px;
+    width: 7px; height: 7px; background: var(--terracota); border-radius: 50%;
+  }
+  .step h3 { margin-top: 14px; font-size: 20px; }
+  .step p { margin-top: 6px; }
+  @media (min-width: 760px) {
+    .steps::before {
+      content: ""; position: absolute; left: 8%; right: 8%; top: 32px;
+      height: 1px;
+      background: repeating-linear-gradient(to right, var(--line-2) 0 6px, transparent 6px 12px);
+      z-index: 0;
+    }
+    .step-num { background: var(--paper); padding-right: 16px; position: relative; z-index: 1; }
+  }
+</style>

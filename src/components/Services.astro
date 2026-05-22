@@ -1,0 +1,98 @@
+---
+import { site } from '../data/site';
+---
+<section id="servicios" class="section">
+  <div class="container-page">
+    <div class="section-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2 class="h-section">{site.servicesIntro.title}</h2>
+      <p class="lead">{site.servicesIntro.body}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[22px]">
+      {site.services.map((s) => (
+        <article class="card-base p-6 flex flex-col gap-[14px] reveal">
+          <div class="font-mono text-[11px] text-ink-3 tracking-[0.16em]">{s.num}</div>
+          <h3 class="h-card">{s.title}</h3>
+          <p class="small">{s.desc}</p>
+          <div class="svc-illus" aria-hidden="true">
+            {s.id === 'diag' && (
+              <svg viewBox="0 0 200 80">
+                <g fill="none" stroke="#0F2A44" stroke-width="1.5">
+                  <rect x="6" y="14" width="40" height="52" rx="3"/>
+                  <line x1="14" y1="56" x2="14" y2="40"/><line x1="22" y1="56" x2="22" y2="30"/>
+                  <line x1="30" y1="56" x2="30" y2="46"/><line x1="38" y1="56" x2="38" y2="26"/>
+                  <rect x="60" y="14" width="60" height="52" rx="3"/>
+                  <polyline points="66,58 78,48 90,52 102,38 114,42"/>
+                  <circle cx="114" cy="42" r="2.5" fill="#C45B2D" stroke="#C45B2D"/>
+                  <rect x="134" y="14" width="60" height="24" rx="3"/>
+                  <rect x="134" y="42" width="60" height="24" rx="3"/>
+                  <text x="164" y="30" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="11" fill="#0F2A44">94%</text>
+                  <text x="164" y="58" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="11" fill="#0F2A44">3.2d</text>
+                </g>
+              </svg>
+            )}
+            {s.id === 'opt' && (
+              <svg viewBox="0 0 200 80">
+                <g fill="none" stroke="#0F2A44" stroke-width="1.5">
+                  <circle cx="20" cy="40" r="9"/>
+                  <rect x="55" y="30" width="36" height="20" rx="3"/>
+                  <rect x="105" y="30" width="36" height="20" rx="3" stroke="#C45B2D" stroke-dasharray="3 3"/>
+                  <circle cx="170" cy="40" r="9"/>
+                  <path d="M29 40 H55 M91 40 H105 M141 40 H161"/>
+                  <path d="M170 30 V18 H105 V28" stroke-dasharray="2 3"/>
+                  <text x="20" y="44" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="9" fill="#0F2A44">A</text>
+                  <text x="170" y="44" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="9" fill="#0F2A44">B</text>
+                </g>
+              </svg>
+            )}
+            {s.id === 'digital' && (
+              <svg viewBox="0 0 200 80">
+                <g fill="none" stroke="#0F2A44" stroke-width="1.5">
+                  <rect x="6" y="14" width="38" height="52" rx="3"/>
+                  <line x1="14" y1="24" x2="36" y2="24"/><line x1="14" y1="32" x2="30" y2="32"/>
+                  <rect x="14" y="40" width="22" height="14" rx="2"/>
+                  <rect x="58" y="20" width="56" height="32" rx="14"/>
+                  <text x="86" y="40" text-anchor="middle" font-family="Manrope" font-weight="600" font-size="10" fill="#0F2A44">WhatsApp</text>
+                  <path d="M58 52 L66 60 L72 54"/>
+                  <g transform="translate(132,18)">
+                    <polygon points="14,2 17,10 26,10 19,15 22,24 14,19 6,24 9,15 2,10 11,10" fill="#C45B2D" stroke="#C45B2D"/>
+                    <polygon points="14,32 17,40 26,40 19,45 22,54 14,49 6,54 9,45 2,40 11,40" fill="#C45B2D" stroke="#C45B2D"/>
+                  </g>
+                  <path d="M126 36 L132 36 M126 50 L132 50"/>
+                </g>
+              </svg>
+            )}
+            {s.id === 'metrics' && (
+              <svg viewBox="0 0 200 80">
+                <g fill="none" stroke="#0F2A44" stroke-width="1.5">
+                  <rect x="6" y="10" width="188" height="60" rx="3"/>
+                  <line x1="6" y1="22" x2="194" y2="22"/>
+                  <rect x="14" y="30" width="50" height="32" rx="2"/>
+                  <polyline points="20,56 30,46 40,50 50,38 58,42"/>
+                  <circle cx="58" cy="42" r="2" fill="#C45B2D" stroke="#C45B2D"/>
+                  <rect x="74" y="30" width="50" height="32" rx="2"/>
+                  <rect x="80" y="50" width="6" height="10"/><rect x="90" y="44" width="6" height="16"/>
+                  <rect x="100" y="38" width="6" height="22"/><rect x="110" y="46" width="6" height="14"/>
+                  <rect x="134" y="30" width="50" height="32" rx="2"/>
+                  <text x="159" y="50" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="13" fill="#0F2A44">$184k</text>
+                  <text x="159" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8B8B86">semana</text>
+                </g>
+              </svg>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .svc-illus {
+    height: 96px; border-radius: 4px;
+    background: var(--paper-2); border: 1px solid var(--line);
+    padding: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .svc-illus svg { width: 100%; height: 100%; display: block; }
+</style>

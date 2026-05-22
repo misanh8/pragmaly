@@ -1,0 +1,114 @@
+---
+import { site } from '../data/site';
+---
+<section id="custom" class="section bg-paper">
+  <div class="container-page custom-grid">
+    <div class="reveal">
+      <span class="eyebrow">Software a medida</span>
+      <h2 class="h-section">Cuando no existe la herramienta que necesitas, la construimos.</h2>
+      <p class="lead">Una pequeña aplicación específica para tu equipo — no un SaaS genérico que tienes que pelear para que encaje. Web app simple, con tu lógica, conectada a lo que ya usas.</p>
+      <ul class="custom-list">
+        {site.customFeatures.map((f) => (
+          <li><span class="dot"></span>{f}</li>
+        ))}
+      </ul>
+      <p class="custom-note micro">// No reemplazamos lo que funciona. Construimos sólo la pieza que falta.</p>
+    </div>
+
+    <div class="reveal app-mock" aria-hidden="true">
+      <div class="app-chrome">
+        <i></i><i></i><i></i>
+        <span>tu-empresa.{site.brand.domain.replace('.mx','')}.app</span>
+      </div>
+      <div class="app-body">
+        <aside class="app-side">
+          <div class="app-logo"><span class="app-logo-dot"></span><span>tu app</span></div>
+          <nav>
+            <a class="active">▦ Pedidos</a>
+            <a>◐ Clientes</a>
+            <a>⟳ Producción</a>
+            <a>◧ Reportes</a>
+            <a>⚙ Ajustes</a>
+          </nav>
+          <div class="app-side-foot">v1.4 · al día</div>
+        </aside>
+        <main class="app-main">
+          <div class="app-head">
+            <div>
+              <div class="app-eyebrow">Pedidos · hoy</div>
+              <div class="app-title">42 órdenes activas</div>
+            </div>
+            <span class="app-cta">+ Nuevo pedido</span>
+          </div>
+          <div class="app-rows">
+            <div class="app-row"><span class="app-tag green">listo</span><span>#1042 · Distribuidora Ruiz</span><span class="app-row-meta">$ 4,820</span></div>
+            <div class="app-row"><span class="app-tag amber">producción</span><span>#1041 · Clínica San José</span><span class="app-row-meta">$ 12,300</span></div>
+            <div class="app-row"><span class="app-tag amber">producción</span><span>#1040 · Industrias Trejo</span><span class="app-row-meta">$ 38,400</span></div>
+            <div class="app-row"><span class="app-tag blue">cotizado</span><span>#1039 · Restaurante La Era</span><span class="app-row-meta">$ 2,150</span></div>
+            <div class="app-row"><span class="app-tag green">listo</span><span>#1038 · Refacciones MX</span><span class="app-row-meta">$ 9,700</span></div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .custom-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+  @media (min-width: 980px) { .custom-grid { grid-template-columns: 1fr 1.1fr; gap: 64px; } }
+  .custom-list { list-style: none; margin: 24px 0 16px; padding: 0; display: grid; gap: 10px; }
+  .custom-list li { display: flex; align-items: center; gap: 12px; font-size: 15.5px; color: var(--ink); font-weight: 500; }
+  .custom-list .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--terracota); flex: 0 0 auto;
+    box-shadow: 0 0 0 4px rgba(196,91,45,0.16);
+  }
+  .custom-note { margin-top: 18px; color: var(--ink-3); font-style: normal; }
+
+  .app-mock { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--paper);
+    box-shadow: 0 2px 4px rgba(15,42,68,0.05), 0 18px 40px rgba(15,42,68,0.08); }
+  .app-chrome { height: 32px; background: var(--paper-2); border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 6px; padding: 0 14px; }
+  .app-chrome i { width: 9px; height: 9px; border-radius: 50%; background: var(--line-2); display: inline-block; }
+  .app-chrome i:nth-child(1) { background: #E8C0A0; }
+  .app-chrome i:nth-child(2) { background: #E8D6A0; }
+  .app-chrome i:nth-child(3) { background: #B6D6B0; }
+  .app-chrome span { margin: 0 auto; font-family: var(--mono, "JetBrains Mono"); font-size: 10.5px; color: var(--ink-3);
+    background: var(--paper); padding: 3px 10px; border-radius: 4px; border: 1px solid var(--line); }
+  .app-body { display: grid; grid-template-columns: 150px 1fr; min-height: 320px; }
+  .app-side { background: var(--navy); color: var(--paper); padding: 18px 14px 14px; display: flex; flex-direction: column; gap: 4px; }
+  .app-logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; letter-spacing: -0.01em;
+    margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(250,250,247,0.08); }
+  .app-logo-dot { width: 9px; height: 9px; background: var(--terracota); border-radius: 2px; display: inline-block; }
+  .app-side nav { display: flex; flex-direction: column; gap: 2px; }
+  .app-side nav a { font-family: var(--sans, Manrope); font-size: 12.5px; font-weight: 500;
+    padding: 7px 9px; border-radius: 5px; color: rgba(250,250,247,0.68); }
+  .app-side nav a.active { background: rgba(250,250,247,0.08); color: var(--paper); }
+  .app-side-foot { margin-top: auto; padding-top: 12px; font-family: var(--mono, "JetBrains Mono"); font-size: 10px;
+    color: rgba(250,250,247,0.4); border-top: 1px solid rgba(250,250,247,0.08); }
+  .app-main { padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; background: var(--paper); }
+  .app-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; }
+  .app-eyebrow { font-family: var(--mono, "JetBrains Mono"); font-size: 10px; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; }
+  .app-title { font-size: 19px; font-weight: 700; color: var(--navy); margin-top: 2px; letter-spacing: -0.02em; }
+  .app-cta { font-family: var(--sans, Manrope); font-size: 12px; font-weight: 600;
+    background: var(--terracota); color: var(--paper);
+    padding: 7px 11px; border-radius: 6px; border: 1px solid var(--terracota-2); white-space: nowrap; }
+  .app-rows { display: flex; flex-direction: column; gap: 6px; }
+  .app-row { display: grid; grid-template-columns: 90px 1fr auto; gap: 12px; align-items: center;
+    padding: 9px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); font-size: 13px; color: var(--ink); }
+  .app-row-meta { font-family: var(--mono, "JetBrains Mono"); color: var(--ink-2); font-size: 12.5px; }
+  .app-tag { font-family: var(--mono, "JetBrains Mono"); font-size: 10px; padding: 3px 7px; border-radius: 3px;
+    text-align: center; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+  .app-tag.green { background: rgba(46,125,91,0.12); color: #1F5A40; border: 1px solid rgba(46,125,91,0.22); }
+  .app-tag.amber { background: rgba(200,164,21,0.16); color: #6E5A0A; border: 1px solid rgba(200,164,21,0.30); }
+  .app-tag.blue { background: rgba(15,42,68,0.08); color: var(--navy); border: 1px solid rgba(15,42,68,0.18); }
+  @media (max-width: 640px) {
+    .app-body { grid-template-columns: 1fr; }
+    .app-side { flex-direction: row; flex-wrap: wrap; align-items: center; padding: 12px 14px; }
+    .app-logo { margin: 0; padding: 0; border: 0; }
+    .app-side nav { flex-direction: row; flex-wrap: wrap; gap: 2px; margin-left: auto; }
+    .app-side nav a { padding: 5px 8px; font-size: 11.5px; }
+    .app-side-foot { display: none; }
+    .app-row { grid-template-columns: 78px 1fr auto; padding: 8px 10px; font-size: 12px; }
+  }
+</style>

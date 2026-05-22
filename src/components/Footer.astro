@@ -1,0 +1,19 @@
+---
+import { site, waUrl } from '../data/site';
+import Logo from './Logo.astro';
+---
+<footer class="border-t border-line bg-paper py-10 pb-14">
+  <div class="container-page flex flex-wrap gap-y-[14px] gap-x-[22px] items-center text-[13.5px] text-ink-2">
+    <a href="#" class="inline-flex items-center gap-[9px] text-navy font-bold text-base tracking-tight">
+      <Logo />
+      <span>{site.brand.name}</span>
+    </a>
+    <span>© {site.footer.year}</span>
+    <span>·</span>
+    <span>{site.location.city}</span>
+    <div class="ml-auto flex gap-[18px]">
+      {site.team[0].linkedin && <a href={site.team[0].linkedin} target="_blank" rel="noopener" class="hover:text-navy">LinkedIn</a>}
+      <a href={waUrl()} target="_blank" rel="noopener" class="hover:text-navy">WhatsApp</a>
+    </div>
+  </div>
+</footer>
