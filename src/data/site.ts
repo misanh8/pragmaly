@@ -129,8 +129,20 @@ export const site = {
 
   cases: {
     title: 'Casos',
-    body: 'Próximamente. Estamos arrancando con nuestros primeros proyectos. Si quieres ser uno de ellos, escríbenos.',
-    cta: 'Quiero ser uno de los primeros →',
+    cta: 'Quiero resultados así →',
+    list: [
+      {
+        client: 'Bengali Jewelry',
+        segment: 'Joyería de autor · Comercio local',
+        service: 'Presencia digital + automatización',
+        status: 'en curso' as const,
+        challenge: 'Negocio de una sola persona que vendía únicamente por WhatsApp. Sin catálogo online, fotos inconsistentes con mala iluminación, proceso de venta completamente manual y sin métricas.',
+        solution: 'Diseñamos y construimos un catálogo web conectado a Google Sheets como CMS. Un pipeline con n8n procesa cada nueva pieza: extrae piedra, color, tipo y etiquetas, renombra las fotos automáticamente y actualiza el catálogo en vivo. Integración con PayPal, políticas claras y soporte en segmentación de Meta Ads.',
+        result: 'La web reemplaza la fricción del WhatsApp con un catálogo navegable y profesional. Actualmente ampliando el inventario fotográfico y afinando la automatización del flujo de ventas.',
+        tags: ['Catálogo web', 'Google Sheets CMS', 'n8n', 'PayPal', 'Meta Ads'],
+        url: 'https://bengalijewelry.com',
+      },
+    ],
   },
 
   footer: {

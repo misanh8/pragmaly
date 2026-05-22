@@ -1,0 +1,54 @@
+# 1. LA TIENDA DE JOYERÍA
+bengalijewelry.com, www.bengalijewelry.com {
+    root * /var/www/bengalijewelry
+    file_server
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        -Server
+    }
+    header Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.paypal.com https://www.paypalobjects.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://lh3.googleusercontent.com data: https://placehold.co; connect-src 'self' https://www.paypal.com https://www.sandbox.paypal.com; frame-src https://www.paypal.com; object-src 'none'; base-uri 'self'"
+
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8000
+    }
+}
+
+# 2. EL SISTEMA N8N
+n8n.bengalijewelry.com {
+    reverse_proxy 127.0.0.1:5678
+}
+
+# 3. ASTRONOIR BACKEND
+api.astronoir.app {
+    reverse_proxy 127.0.0.1:8001
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        -Server
+    }
+}
+
+# 4. PRAGMALY
+pragmaly.mx, www.pragmaly.mx {
+    root * /var/www/pragmaly
+    file_server
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        -Server
+    }
+
+    encode gzip
+}

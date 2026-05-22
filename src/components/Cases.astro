@@ -1,28 +1,189 @@
 ---
 import { site } from '../data/site';
+const { list, title, cta } = site.cases;
 ---
+
 <section id="casos" class="section">
   <div class="container-page">
-    <div class="cases reveal">
+
+    <div class="section-header reveal">
       <span class="eyebrow">Casos</span>
-      <h2 class="h-section">{site.cases.title}</h2>
-      <p class="small">{site.cases.body}</p>
-      <a class="btn btn-ghost" href="#contacto">{site.cases.cta}</a>
+      <h2 class="h-section">{title}</h2>
     </div>
+
+    <div class="cases-grid">
+      {list.map((c) => (
+        <article class="case-card reveal">
+
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="client">{c.client}</span>
+              <span class="segment">{c.segment}</span>
+            </div>
+            <span class={`status status--${c.status === 'en curso' ? 'active' : 'done'}`}>
+              {c.status === 'en curso' ? '● En curso' : '✓ Completado'}
+            </span>
+          </div>
+
+          <p class="service-label">{c.service}</p>
+
+          <div class="card-body">
+            <div class="block">
+              <span class="block-label">Situación inicial</span>
+              <p>{c.challenge}</p>
+            </div>
+            <div class="block">
+              <span class="block-label">Lo que hicimos</span>
+              <p>{c.solution}</p>
+            </div>
+            <div class="block">
+              <span class="block-label">Resultado</span>
+              <p>{c.result}</p>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="tags">
+              {c.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+            <a href={c.url} target="_blank" rel="noopener" class="case-link">
+              Ver proyecto ↗
+            </a>
+          </div>
+
+        </article>
+      ))}
+
+      <!-- Placeholder próximo caso -->
+      <div class="case-placeholder reveal">
+        <p>¿Tu negocio aquí?</p>
+        <a class="btn btn-ghost" href="#contacto">{cta}</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <style>
-  .cases {
-    text-align: center;
-    border: 1px dashed var(--line-2); border-radius: 12px;
-    padding: 56px 28px;
-    background:
-      repeating-linear-gradient(135deg, transparent 0 14px, rgba(15,42,68,0.025) 14px 15px),
-      var(--paper);
-    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  .section-header { margin-bottom: 40px; }
+  .section-header .h-section { margin: 8px 0 0; }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr));
+    gap: 24px;
+    align-items: start;
   }
-  .cases .h-section { margin: 0; }
-  .cases p { margin: 0; max-width: 50ch; }
-  .cases .btn { margin-top: 10px; }
+
+  /* Card */
+  .case-card {
+    background: var(--paper);
+    border: 1px solid var(--line-1);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card-meta { display: flex; flex-direction: column; gap: 2px; }
+  .client { font-weight: 700; font-size: 1rem; color: var(--ink); }
+  .segment { font-size: 0.75rem; color: var(--ink-3); letter-spacing: .02em; }
+
+  .status {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 3px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .status--active  { background: color-mix(in srgb, var(--terra) 12%, transparent); color: var(--terra); }
+  .status--done    { background: color-mix(in srgb, var(--navy) 10%, transparent); color: var(--navy); }
+
+  .service-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--terra);
+    margin: 0;
+  }
+
+  .card-body { display: flex; flex-direction: column; gap: 14px; }
+
+  .block { display: flex; flex-direction: column; gap: 4px; }
+  .block-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink-3);
+  }
+  .block p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line-1);
+    margin-top: auto;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: color-mix(in srgb, var(--navy) 8%, transparent);
+    color: var(--navy);
+    padding: 3px 9px;
+    border-radius: 99px;
+  }
+
+  .case-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--terra);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .case-link:hover { text-decoration: underline; }
+
+  /* Placeholder */
+  .case-placeholder {
+    border: 1px dashed var(--line-2);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, rgba(15,42,68,0.02) 14px 15px),
+      var(--paper);
+    min-height: 160px;
+    text-align: center;
+  }
+  .case-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--ink-3);
+  }
 </style>
