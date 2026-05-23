@@ -20,6 +20,13 @@ export const site = {
     email: 'hola@pragmaly.mx',
   },
 
+  forms: {
+    // URL del Apps Script desplegado (termina en /exec).
+    // Mientras esté vacío, el form valida pero no envía — útil en local.
+    // Instrucciones en crm/README.md.
+    endpoint: 'https://script.google.com/macros/s/AKfycbymM_qU1m4WO4lgujJA_jzEZtxIaTARk4Okp6znpOwvjcM7O3L6WJjUVdOWKJPAMmxa/exec',
+  },
+
   location: {
     city: 'Jilotepec, Estado de México',
     region: 'corredor MX–QRO',

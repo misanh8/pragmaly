@@ -29,7 +29,7 @@ import { site, waUrl } from '../data/site';
         <a class="btn btn-ghost" href={`mailto:${site.contact.email}`}>Escribir correo</a>
       </div>
 
-      <form class="contact-card reveal" id="contact-form" novalidate>
+      <form class="contact-card reveal" id="contact-form" data-endpoint={site.forms.endpoint} novalidate>
         <span class="micro">también con formulario</span>
         <h3>Cuéntanos en 3 campos</h3>
         <div class="form-grid">
@@ -41,6 +41,11 @@ import { site, waUrl } from '../data/site';
           </label>
           <label class="form-help" for="f-msg">Mensaje
             <textarea class="field" id="f-msg" name="mensaje" required placeholder="En una línea: qué quieres ordenar primero."></textarea>
+          </label>
+          <!-- Honeypot anti-spam: invisible para humanos, los bots lo llenan -->
+          <label class="hp" aria-hidden="true">
+            Sitio web
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
           </label>
         </div>
         <button type="submit" class="btn btn-dark">
@@ -75,6 +80,7 @@ import { site, waUrl } from '../data/site';
   .form-grid { display: grid; gap: 10px; }
   .form-grid label { display: grid; gap: 4px; }
   textarea.field { min-height: 92px; resize: vertical; }
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
   .reply-line {
     display: inline-flex; align-items: center; gap: 8px;
     margin-top: 22px; font-family: var(--mono, "JetBrains Mono"); font-size: 12.5px; color: var(--ink-2);
