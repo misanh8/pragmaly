@@ -5,19 +5,18 @@
 
 export const site = {
   brand: {
-    name: 'Pragmaly',
+    name: 'Pragmalysi',
     tagline: 'Ordenamos cómo opera tu negocio y hacemos visibles tus datos.',
     conceptLine: 'De la oportunidad a la solución',
-    domain: 'pragmaly.mx', // TODO: confirmar dominio final
+    // πρᾶγμα (acción concreta) + λύσις (el momento en que el obstáculo se disuelve)
+    domain: 'pragmaly.mx', // TODO: confirmar dominio final (pragmalysi.*)
   },
 
   contact: {
-    // TODO: número internacional sin signos (ej. "5215512345678")
-    whatsapp: '52XXXXXXXXXX',
-    // TODO: mismo número con formato bonito
-    whatsappDisplay: '+52 XXX XXX XXXX',
-    // TODO: correo definitivo
-    email: 'hola@pragmaly.mx',
+    whatsapp: '5214272909788',
+    whatsappDisplay: '+52 427 290 9788',
+    // Temporal hasta confirmar dominio y crear hola@pragmalysi.*
+    email: 'jpsmagana@gmail.com',
   },
 
   forms: {
@@ -40,16 +39,16 @@ export const site = {
 
   audiences: [
     {
-      tag: 'Tipo A · Industria',
-      title: 'Empresas industriales medianas',
-      desc: '15 a 80 empleados, manufactura, proveedores del Parque Industrial. Necesitan procesos formales, indicadores claros y muchas veces certificación ISO.',
-      meta: ['15–80 empleados', 'Manufactura', 'ISO 9001', 'KPIs operativos'],
+      tag: 'Operación',
+      title: 'Tu operación creció más rápido que tus procesos',
+      desc: 'Ya facturas, ya hay equipo, pero la coordinación vive en cabezas y mensajes sueltos. Reaparecen los mismos errores, nadie ve los mismos números, y crecer se siente como agregar caos.',
+      meta: ['Procesos claros', 'Indicadores que importan', 'Sistemas de gestión', 'Mejora continua'],
     },
     {
-      tag: 'Tipo B · Local',
-      title: 'Comercios y servicios locales',
-      desc: 'Clínicas, distribuidoras, restaurantes con domicilio, despachos. Ya tienen clientes pero pierden ventas por atención manual, sin web o sin métricas.',
-      meta: ['Clínicas', 'Distribuidoras', 'Restaurantes', 'Despachos'],
+      tag: 'Visibilidad',
+      title: 'Estás perdiendo ventas por fricción digital',
+      desc: 'Tienes clientes y demanda real, pero la atención es 100% manual, no hay web utilizable, no hay métricas y cada nueva venta cuesta el mismo esfuerzo que la primera.',
+      meta: ['Presencia digital', 'Automatización', 'Tablero de métricas', 'Atención sin fugas'],
     },
   ],
 
@@ -112,23 +111,23 @@ export const site = {
   team: [
     {
       // TODO: nombre real
-      name: 'Socio 1 · Nombre por confirmar',
-      role: 'Ingeniero industrial · operaciones, ISO y mejora continua',
-      bio: '20 años dirigiendo operaciones, calidad y sistemas de gestión ISO (9001, 14001, 22000) en empresas industriales medianas y grandes. Especialista en Kaizen, Lean Manufacturing y Six Sigma. Trayectoria adicional en comercialización de insumos industriales (Óxido de Zinc, Litargirio, entre otros).',
-      tags: ['ISO 9001 / 14001 / 22000', 'Kaizen · Lean · Six Sigma', 'Dirección operativa', 'Insumos industriales'],
+      name: 'Socio 1 · José Pablo Sánchez Magaña',
+      role: 'Ingeniero industrial · Dir. operaciones, Lean/Six Sigma Black Belt, ISO y mejora continua',
+      bio: '+25 años optimizando plantas, dirigiendo operaciones, calidad y sistemas de gestión en empresas industriales medianas y grandes. Especialista en Kaizen, Lean Manufacturing y Six Sigma. Trayectoria adicional en comercialización de insumos industriales (Óxido de Zinc, Litargirio, entre otros) y amplio background en metalurgia e industria metalmecánica.',
+      tags: ['Gerencia ', 'ISO 9001 / 14001 / 22000', 'Kaizen · Lean · Six Sigma', 'Dirección operativa', 'Insumos industriales'],
       // TODO: url de LinkedIn
-      linkedin: 'https://www.linkedin.com/in/socio-1/',
+      linkedin: 'https://www.linkedin.com/in/jpablosanchezmagana',
       monogram: 'S1',
       avatarStyle: 'navy' as const,
     },
     {
       // TODO: nombre real
-      name: 'Socio 2 · Nombre por confirmar',
-      role: 'Datos · IA aplicada · automatización',
-      bio: 'Asesoría, desarrollo e implementación de IA, dashboards, Python e integraciones. Hacemos que los datos del negocio dejen de vivir en cabezas y archivos sueltos, y que la IA resuelva tareas reales en vez de quedarse en demo.',
-      tags: ['IA aplicada', 'Python · Automatización', 'Dashboards', 'Web & WhatsApp'],
+      name: 'Socio 2 · José Miguel Sánchez Flores',
+      role: 'Ingeniería Física · Datos · IA aplicada · Automatización',
+      bio: 'Enfoque en datos, pipelines, automatización y sistemas en producción. Desarrollo e implementación de IA, reportes, dashboards, Python e integraciones. Hacemos que los datos del negocio dejen de vivir en cabezas y archivos sueltos, resolviendo problemas reales.',
+      tags: ['Power BI', 'Excel', 'Python · Automatización', 'Dashboards', 'Web · APIs' , 'Software'],
       // TODO: url de LinkedIn
-      linkedin: 'https://www.linkedin.com/in/socio-2/',
+      linkedin: 'https://linkedin.com/in/josé-miguel-sánchez-96a615262',
       monogram: 'S2',
       avatarStyle: 'terracota' as const,
     },
@@ -143,8 +142,8 @@ export const site = {
         segment: 'Joyería de autor · Comercio local',
         service: 'Presencia digital + automatización',
         status: 'en curso' as const,
-        challenge: 'Negocio de una sola persona que vendía únicamente por WhatsApp. Sin catálogo online, fotos inconsistentes con mala iluminación, proceso de venta completamente manual y sin métricas.',
-        solution: 'Diseñamos y construimos un catálogo web conectado a Google Sheets como CMS. Un pipeline con n8n procesa cada nueva pieza: extrae piedra, color, tipo y etiquetas, renombra las fotos automáticamente y actualiza el catálogo en vivo. Integración con PayPal, políticas claras y soporte en segmentación de Meta Ads.',
+        challenge: 'Negocio pequeño que vendía únicamente por WhatsApp. Sin catálogo, fotos inconsistentes, proceso de venta completamente manual y sin métricas.',
+        solution: 'Diseñamos y construimos un catálogo web conectado a Google Sheets como CMS. Un pipeline con n8n procesa cada nueva pieza: extrae piedra, color, tipo y etiquetas, renombra las fotos automáticamente y actualiza el catálogo en vivo. Integración con PayPal y soporte en segmentación de Meta Ads.',
         result: 'La web reemplaza la fricción del WhatsApp con un catálogo navegable y profesional. Actualmente ampliando el inventario fotográfico y afinando la automatización del flujo de ventas.',
         tags: ['Catálogo web', 'Google Sheets CMS', 'n8n', 'PayPal', 'Meta Ads'],
         url: 'https://bengalijewelry.com',
