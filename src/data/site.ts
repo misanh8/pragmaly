@@ -9,7 +9,7 @@ export const site = {
     tagline: 'Ordenamos cómo opera tu negocio y hacemos visibles tus datos.',
     conceptLine: 'De la oportunidad a la solución',
     // πρᾶγμα (acción concreta) + λύσις (el momento en que el obstáculo se disuelve)
-    domain: 'pragmaly.mx', // TODO: confirmar dominio final (pragmalysi.*)
+    domain: 'pragmalysi.vercel.app', // TODO: cambiar al dominio definitivo cuando se registre (pragmalysi.*)
   },
 
   contact: {

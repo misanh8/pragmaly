@@ -3,6 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pragmaly.mx',
+  site: 'https://pragmalysi.vercel.app',
   integrations: [tailwind({ applyBaseStyles: false })],
 });
