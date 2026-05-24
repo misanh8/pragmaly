@@ -117,18 +117,18 @@ export const site = {
       tags: ['Gerencia ', 'ISO 9001 / 14001 / 22000', 'Kaizen · Lean · Six Sigma', 'Dirección operativa', 'Insumos industriales'],
       // TODO: url de LinkedIn
       linkedin: 'https://www.linkedin.com/in/jpablosanchezmagana',
-      monogram: 'S1',
+      monogram: 'JP',
       avatarStyle: 'navy' as const,
     },
     {
       // TODO: nombre real
       name: 'Socio 2 · José Miguel Sánchez Flores',
       role: 'Ingeniería Física · Datos · IA aplicada · Automatización',
-      bio: 'Enfoque en datos, pipelines, automatización y sistemas en producción. Desarrollo e implementación de IA, reportes, dashboards, Python e integraciones. Hacemos que los datos del negocio dejen de vivir en cabezas y archivos sueltos, resolviendo problemas reales.',
-      tags: ['Power BI', 'Excel', 'Python · Automatización', 'Dashboards', 'Web · APIs' , 'Software'],
+      bio: 'Perfil técnico con enfoque en datos: pipelines, automatización y sistemas en producción. Construcción de pipelines y dashboards; automatización de flujos con diversas herramientas. Integración de LLMs y software especializado. Experiencia en proyectos de análisis, automatización y presencia digital. Formación en física, con enfoque en modelado computacional y resolución de sistemas complejos. Apasionado por traducir necesidades de negocio en soluciones técnicas efectivas.',
+      tags: ['Análisis', 'Power BI', 'Python · Backend', 'Frontend', 'Web · APIs'],
       // TODO: url de LinkedIn
       linkedin: 'https://linkedin.com/in/josé-miguel-sánchez-96a615262',
-      monogram: 'S2',
+      monogram: 'JM',
       avatarStyle: 'terracota' as const,
     },
   ],
